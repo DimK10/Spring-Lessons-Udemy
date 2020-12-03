@@ -22,7 +22,8 @@
           class="com.dimitriskaitantzidis.springdemo.HappyFortuneService" />
     <bean id="myCoach"
           class="com.dimitriskaitantzidis.springdemo.TrackCoach"
-          scope="prototype"
+          init-method="doMyStartupStuff"
+          destroy-method="doMyCleanupStuff"
     >
 <!--        Set up constructor injection-->
         <constructor-arg ref="myFortuneService" />
